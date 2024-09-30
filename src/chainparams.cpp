@@ -53,8 +53,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "SeptembertwentyeighttwentytwentyfourtenfortyfiveAM";
-    const CScript genesisOutputScript = CScript() << ParseHex("046c076f1eef5bb2f3f5cdea964b7f1649ada3356fde02e48be8082f1e5661d33c38116e54c4c860e854e2a520691b8dabc6cc9e71f5cfd76389636851258d8239") << OP_CHECKSIG;
+    const char* pszTimestamp = "CubeCoinChain is a new coin";
+    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -116,15 +116,15 @@ public:
 
         genesis = CreateGenesisBlock(1727541627, 553805, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x9736c99c80fbe1c285746c2d76e8530727f3509fc26ce91055d605e22ededb36"));
-        assert(genesis.hashMerkleRoot == uint256S("0x574cf1e3b81114b26815139c8fca6c1d3b310a500192521e7202928d98232e4e"));
+        assert(consensus.hashGenesisBlock == uint256S("03c65635787193103de553fb4f31587d9b07861a72938f616946b38fd98ed372"));
+        assert(genesis.hashMerkleRoot == uint256S("749a177453ac714c5a6422ddd6ec1a10bcb9ff86a39398d41efcab58e3265d4d"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("node3.walletbuilders.com");
+        // vSeeds.emplace_back("node3.walletbuilders.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,36);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
