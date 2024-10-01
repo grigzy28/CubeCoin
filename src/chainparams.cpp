@@ -98,7 +98,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT; 
 
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
-        consensus.defaultAssumeValid = uint256S("0x9736c99c80fbe1c285746c2d76e8530727f3509fc26ce91055d605e22ededb36"); 
+        consensus.defaultAssumeValid = uint256S("0x03c65635787193103de553fb4f31587d9b07861a72938f616946b38fd98ed372"); 
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
